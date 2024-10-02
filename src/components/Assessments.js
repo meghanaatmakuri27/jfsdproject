@@ -3,7 +3,6 @@ import {
   Typography,
   Box,
   Grid,
-  Paper,
   Button,
   Card,
   CardContent,
@@ -37,34 +36,38 @@ const mockAssessments = [
 const Assessments = () => {
   return (
     <Layout>
-    <Box sx={{ padding: 3 }}>
-      <Typography variant="h4" gutterBottom>
-        Available Assessments
-      </Typography>
+      <Box sx={{ padding: 3 }}>
+        <Typography variant="h4" gutterBottom>
+          Available Assessments
+        </Typography>
 
-      <Grid container spacing={3}>
-        {mockAssessments.map((assessment) => (
-          <Grid item xs={12} md={6} lg={4} key={assessment.id}>
-            <Card>
-              <CardContent>
-                <Typography variant="h6">{assessment.title}</Typography>
-                <Typography variant="body2" color="textSecondary" gutterBottom>
-                  Duration: {assessment.duration}
-                </Typography>
-                <Typography variant="body2">
-                  {assessment.description}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button variant="contained" color="primary" fullWidth>
-                  Start Assessment
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+        <Grid container spacing={3}>
+          {mockAssessments.map((assessment) => (
+            <Grid item xs={12} md={6} lg={4} key={assessment.id}>
+              <Card>
+                <CardContent>
+                  <Typography variant="h6">{assessment.title}</Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    gutterBottom
+                  >
+                    Duration: {assessment.duration}
+                  </Typography>
+                  <Typography variant="body2">
+                    {assessment.description}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button variant="contained" color="primary" fullWidth>
+                    Start Assessment
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Layout>
   );
 };
